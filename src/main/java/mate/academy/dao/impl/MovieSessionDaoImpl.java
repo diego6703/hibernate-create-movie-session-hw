@@ -60,6 +60,8 @@ public class MovieSessionDaoImpl implements MovieSessionDao {
                     .setParameter("startOfDay", startOfDay)
                     .setParameter("endOfDay", endOfDay)
                     .getResultList();
+        } catch (Exception e) {
+            throw new DataProcessingException("Can't get a list of available sessions", e);
         }
     }
 }
